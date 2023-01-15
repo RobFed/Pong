@@ -1,8 +1,6 @@
-/*Robbie Fedorowicz
-6/16/2017
+/*
 The purpose of this program is to recreate the pong game.  It used multiple classes, as well as a key listener and window listener to create everything.
 It requires two controls to be pressed to represent a two player game.
-
  */
 
 //importing stuff
@@ -60,8 +58,8 @@ public class pong extends JPanel implements ActionListener, KeyListener,
 		//creating timers and calling other classes
 		t = new Timer(100, this);
 		bTimer = new Timer(10, this);
-    	p1Timer = new Timer(10, this);
-    	p2Timer = new Timer(10, this);
+    		p1Timer = new Timer(10, this);
+    		p2Timer = new Timer(10, this);
 		frame.addKeyListener(this);
 		b = new ball();
 		p1 = new player1();
@@ -199,28 +197,28 @@ public class pong extends JPanel implements ActionListener, KeyListener,
 
 		//if player one presses W, move up
 		if (e.getKeyCode() == KeyEvent.VK_W || wPressed == true) {
-      p1Timer.start();
-      p1.moveUp();
-      wPressed = true;
+      			p1Timer.start();
+			p1.moveUp();
+			Pressed = true;
 
 		}
 		//if player 1 pressed S, move down
 		if (e.getKeyCode() == KeyEvent.VK_S || sPressed == true) {
-      p1Timer.start();
+      			p1Timer.start();
 			p1.moveDown();
-      sPressed = true;
+      			sPressed = true;
 		}
 		//if player 2 pressed up, move up
 		if (e.getKeyCode() == KeyEvent.VK_UP || upPressed == true) {
-      p2Timer.start();
-      upPressed = true;
+		     	p2Timer.start();
+		    	upPressed = true;
 			p2.moveUp();
 		}
 		//if player 2 pressed up, move up
 		if (e.getKeyCode() == KeyEvent.VK_DOWN || downPressed == true) {
-      p2Timer.start();
+      			p2Timer.start();
 			p2.moveDown();
-      downPressed = true;
+      			downPressed = true;
 		}
 		//repaint
 		repaint();
@@ -231,19 +229,19 @@ public class pong extends JPanel implements ActionListener, KeyListener,
 
 		//is user let goes of keys, turn that keys boolean to false
 		if (e.getKeyCode() == KeyEvent.VK_W) {
-      p1Timer.stop();
+      			p1Timer.stop();
 			wPressed = false;
 		}
 		if (e.getKeyCode() == KeyEvent.VK_S) {
-      p1Timer.stop();
+      			p1Timer.stop();
 			sPressed = false;
 		}
 		if (e.getKeyCode() == KeyEvent.VK_UP) {
-      p2Timer.stop();
+      			p2Timer.stop();
 			upPressed = false;
 		}
 		if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-      p2Timer.stop();
+      			p2Timer.stop();
 			downPressed = false;
 		}
 
